@@ -31,19 +31,19 @@ def blocks(inp, out_filt, t, n):
         x = block(x, out_filt, t)
     return x
 
-
-def model(inp_shape):
-    inputs = Input(shape=inp_shape)
-    x = Conv2D(32, (3, 3), strides=(2, 2))(inputs)
-    x = blocks(x, 16, 1, 1)
-    x = blocks(x, 24, 6, 2)
-    x = blocks(x, 32, 6, 3)
-    x = Conv2DTranspose(64, (3, 3))(x)
-    x = Conv2DTranspose(48, (3, 3))(x)
-    x = Conv2DTranspose(32, (3, 3))(x)
-    x = Conv2DTranspose(24, (3, 3))(x)
-    x = Conv2DTranspose(16, (3, 3))(x)
-    x = Conv2DTranspose(16, (3, 3))(x)
-    x = Conv2DTranspose(16, (3, 3), strides=(2, 2))(x)
-    sr_model = Model(inputs, x)
-    return sr_model
+#
+# def model(inp_shape):
+#     inputs = Input(shape=inp_shape)
+#     x = Conv2D(32, (3, 3), strides=(2, 2))(inputs)
+#     x = blocks(x, 16, 1, 1)
+#     x = blocks(x, 24, 6, 2)
+#     x = blocks(x, 32, 6, 3)
+#     x = Conv2DTranspose(64, (3, 3))(x)
+#     x = Conv2DTranspose(48, (3, 3))(x)
+#     x = Conv2DTranspose(32, (3, 3))(x)
+#     x = Conv2DTranspose(24, (3, 3))(x)
+#     x = Conv2DTranspose(16, (3, 3))(x)
+#     x = Conv2DTranspose(16, (3, 3))(x)
+#     x = Conv2DTranspose(16, (3, 3), strides=(2, 2))(x)
+#     sr_model = Model(inputs, x)
+#     return sr_model
