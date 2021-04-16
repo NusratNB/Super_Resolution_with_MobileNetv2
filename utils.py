@@ -20,12 +20,13 @@ def data_gen(path_to_images, data_type, path_save):
     data.close()
 
 
+
 def ssim_loss(predicted, gt, max_value=1.0):
     return 1 - tf.reduce_mean(tf.image.ssim(predicted, gt, max_val=max_value))
 
 
 def psnr_loss(predicted, gt, max_value=1.0):
-    return 1 - tf.image.psnr(predicted, gt, max_val=max_value)
+    return 1 - tf.reduce_mean(tf.image.psnr(predicted, gt, max_val=max_value))
 
 # L1 and L2 loss
 
