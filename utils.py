@@ -15,10 +15,9 @@ def data_gen(path_to_images, data_type, path_save):
         count_h = int(img_h / 16)
         for w in range(count_w):
             for h in range(count_h):
-                line = img_names[i] + " " + "w:" + str(w) + " h:" + str(h) + "\n"
+                line = img_names[i] + "_"+str(w) + "_" + str(h) + "\n"
                 data.write(line)
     data.close()
-
 
 
 def ssim_loss(predicted, gt, max_value=1.0):
@@ -28,6 +27,3 @@ def ssim_loss(predicted, gt, max_value=1.0):
 def psnr_loss(predicted, gt, max_value=1.0):
     return 1 - tf.reduce_mean(tf.image.psnr(predicted, gt, max_val=max_value))
 
-# L1 and L2 loss
-
-# Image resize
