@@ -3,6 +3,12 @@ from tensorflow.keras.layers import ReLU, Input
 from tensorflow.keras.models import Model
 import tensorflow.keras.backend as K
 import tensorflow as tf
+from tensorflow.compat.v1 import ConfigProto
+from tensorflow.compat.v1 import InteractiveSession
+
+config = ConfigProto()
+config.gpu_options.allow_growth = True
+session = InteractiveSession(config=config)
 
 
 def depth_to_space(inp, scale):
