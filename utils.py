@@ -13,8 +13,8 @@ def data_gen(path_to_images, data_type, path_save):
         img_w = img.shape[1]
         count_w = int(img_w / 128)
         count_h = int(img_h / 64)
-        for w in range(count_w):
-            for h in range(count_h):
+        for w in range(count_w-1):
+            for h in range(count_h-1):
                 line = img_names[i] + "_"+str(w) + "_" + str(h) + "\n"
                 data.write(line)
     data.close()
