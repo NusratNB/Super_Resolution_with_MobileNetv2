@@ -3,7 +3,6 @@ import tensorflow.keras as keras
 import cv2
 
 
-
 class DataGenerator(keras.utils.Sequence):
     'Generates data for Keras'
 
