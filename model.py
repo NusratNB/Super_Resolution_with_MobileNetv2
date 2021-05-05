@@ -15,6 +15,10 @@ def depth_to_space(inp, scale):
     return tf.nn.depth_to_space(inp, scale)
 
 
+def linear(x):
+    return tf.keras.activations.linear(x)
+
+
 def relu6(x):
     return ReLU(max_value=6.0)(x)
 
@@ -39,6 +43,7 @@ def block(inp, out_filters, exp_ratio):
     x = DepthwiseConv2D((3, 3), padding='same', strides=(2, 2))(x)
     x = relu6(x)
     x = Conv2D(out_filters, (1, 1), padding='same')(x)
+    x = linear(x)
     return x
 
 
