@@ -3,7 +3,7 @@ import cv2
 import tensorflow as tf
 
 
-def data_gen(path_to_images, data_type, path_save):
+def patch_gen(path_to_images, data_type, path_save):
     img_names = os.listdir(path_to_images)
     img_names.sort()
     data = open(path_save + data_type + ".txt", "w")

@@ -1,0 +1,7 @@
+epochs: 100
+loss: ssim_loss
+lr: 0.0001
+opt: Adam
+tr_path: data/train/
+val_path: data/val/
+path_save: data/

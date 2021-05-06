@@ -54,7 +54,7 @@ def blocks(inp, out_filt, t, n):
     return x
 
 
-def model(inp_shape):
+def nn(inp_shape):
     inputs = Input(shape=inp_shape)
     x = Conv2D(8, (3, 3), strides=(2, 2), padding='same', name='input_layer')(inputs)
     x = blocks(x, 16, 1, 1)
