@@ -2,7 +2,10 @@ epochs: 100
 loss: ssim_loss
 lr: 0.0001
 opt: Adam
-tr_path: data/train/
-val_path: data/val/
+tr_hr_path: data/train/hr/
+tr_lr_path: data/train/lr/
+val_hr_path: data/val/hr/
+val_lr_path: data/val/lr/
 path_save: data/
 batch_size: 8
+input_shape: (128, 128, 3)
