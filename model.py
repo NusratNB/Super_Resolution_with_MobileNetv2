@@ -47,7 +47,7 @@ def block(inp, out_filters, exp_ratio):
     return x
 
 
-def blocks(inp, out_filt, t, n):
+def bottleneck(inp, out_filt, t, n):
     x = block(inp, out_filt, t)
     for i in range(1, n):
         x = block(x, out_filt, t)
@@ -57,9 +57,9 @@ def blocks(inp, out_filt, t, n):
 def nn(inp_shape):
     inputs = Input(shape=inp_shape)
     x = Conv2D(8, (3, 3), strides=(2, 2), padding='same', name='input_layer')(inputs)
-    x = blocks(x, 16, 1, 1)
-    x = blocks(x, 32, 6, 1)
-    x = blocks(x, 64, 6, 1)
+    x = bottleneck(x, 16, 1, 1)
+    x = bottleneck(x, 32, 6, 1)
+    x = bottleneck(x, 64, 6, 1)
     x = _upscale(x, 32, 2)
     x = _upscale(x, 48, 2)
     x = depth_to_space(x, 4)
