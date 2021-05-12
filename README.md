@@ -1,3 +1,3 @@
 **Building light-weight model for Super Resolution with Inverted Residual block from MobileNetV2.**
 
-## Under development
+## Under the development
