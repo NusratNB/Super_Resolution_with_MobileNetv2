@@ -1,5 +1,5 @@
 import os
-from utils import patch_gen, ssim_loss, patch_gen
+from utils import patch_gen, ssim_loss
 from data_gen import DataGenerator
 from model import nn
 import yaml
