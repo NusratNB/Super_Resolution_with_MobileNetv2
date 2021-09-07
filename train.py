@@ -11,7 +11,7 @@ def train(sr_model, opt, loss, tr_hr, tr_lr, vl_hr, vl_lr, epochs, batch_size, p
     val_txt = open(path_save + "validation.txt", "r+")
     tr_txt = open(path_save + "train.txt", "r+")
     tr_patch_list = tr_txt.readlines()
-    val_patch_list = (val_txt.readlines())
+    val_patch_list = val_txt.readlines()
     if loss == "ssim_loss":
         loss = ssim_loss
     elif loss == "psnr_loss":
